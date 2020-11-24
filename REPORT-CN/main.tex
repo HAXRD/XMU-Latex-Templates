@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            宏 包              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%=== 字体支持 ===
+\documentclass{ctexart}             % 中文纸张类
+\usepackage{ctex}                   % 中文字体宏包
+%=== 数学支持 ===
+\usepackage{amsmath}                % AMS宏包
+%=== 图形支持 ===
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+%=== 超链接支持 ===
+\usepackage{hyperref}               % 文本内超链接引用
+%=== 引 用 ===
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+%=== 页面排版 ===
+\usepackage{geometry}               % 页边距调整
+\geometry{top=3.0cm,bottom=2.7cm,left=2.7cm,right=2.7cm}
+\usepackage{fancyhdr}               % 页头与页脚
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\zihao{5} \kaishu 主标题}
+\fancyfoot[C]{~\zihao{5} \thepage~}
+\renewcommand{\headrulewidth}{.65pt}
+\usepackage{setspace}               % 行距等设置
+%=== 按章编号 ===
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+%=== 自定义指令 ===
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}           % 排版线
+
+%=== 章节重命名 ===
+\CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
+\CTEXsetup[nameformat={\bfseries\zihao{3}}]{subsection}
+\CTEXsetup[nameformat={\bfseries\zihao{4}}]{subsubsection}
+
+
+%=== 乱码生成器 ===
+\usepackage{zhlipsum}               % 中文乱码生成器
+\usepackage{lipsum}                 % 英文乱码生成器
+
+
+%===============
+
+%===============
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            正 文              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%=== 封 面 ===
+\begin{titlepage}
+    \begin{center}
+        %--- 图 标 ---
+        \includegraphics[width=0.4\textwidth]{imgs/r6-logo.png}\\[1cm]
+        %--- 标 题 ---
+        \textsc{\LARGE \bfseries 部门信息}\\[1.5cm]
+        \textsc{\Large 副标题}\\[0.5cm]
+        \HRule \\[0.4cm]
+        {\huge \bfseries 主标题}\\[0.4cm]
+        \HRule \\[1.5cm]
+        %--- 作 者 ---
+        \begin{minipage}{0.4\textwidth}
+            \begin{center} \large
+                \textsc{\kaishu 作者1~?}\\
+                \textsc{\kaishu 作者2~?}\\
+                \textsc{\kaishu 作者3~?}\\
+                \textsc{\small\kaishu （按字母序排序）}
+            \end{center}
+        \end{minipage}
+        \vfill
+        %--- 日 期 ---
+        {\large \today}
+    \end{center}
+\end{titlepage}
+
+%=== 摘 要 ===
+\doublespacing
+\begin{abstract}
+    \zhlipsum
+\end{abstract}
+
+%=== 目 录 ===
+\clearpage
+\tableofcontents
+\clearpage
+
+%=== 章 节 ===
+\section{Section}
+\zhlipsum[2]
+\subsection{示例}
+\zhlipsum[3]
+\subsubsection{插入图形}
+\zhlipsum[1]
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/SAS-Mute.png}
+        \caption{Mute}
+        \label{fig:mute}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/SAS-Sledge.png}
+        \caption{Sledge}
+        \label{fig:sledge}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/SAS-Smoke.png}
+        \caption{Smoke}
+        \label{fig:smoke}
+    \end{subfigure}
+    \hfill
+\begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/SAS-Thatcher.png}
+        \caption{Thatcher}
+        \label{fig:thatcher}
+    \end{subfigure}
+    \caption{S.A.S Operators}
+    \label{}
+\end{figure}
+
+\subsubsection{引用示例}
+爱因斯坦写了相对论\cite{einstein}。
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{函数名称}                           & \multicolumn{1}{c|}{功能}                                                        \\ \hline
+    \textit{uni.openBluetoothAdapter(OBJECT)}            & 初始化蓝牙模块                                                                        \\ \hline
+    \textit{uni.startBluetoothDevicesDiscovery(OBJECT)}  & 开始搜索附近的蓝牙外围设备                                                                  \\ \hline
+    \textit{uni.onBluetoothDeviceFound(CALLBACK)}        & 监听寻找到新设备的事件                                                                    \\ \hline
+    \textit{uni.onBluetoothAdapterStateChange(CALLBACK)} & 监听蓝牙适配器状态变化                                                                    \\ \hline
+    \textit{uni.closeBluetoothAdapter(OBJECT)}           & 关闭蓝牙模块                                                                         \\ \hline
+    \textit{uni.writeBLECharacteristicValue(OBJECT)}     & 向低功耗蓝牙设备特征值中写入二进制数据                                                            \\ \hline
+    \textit{uni.createBLEConnection(OBJECT)}             & 连接低功耗蓝牙设备                                                                      \\ \hline
+    \textit{uni.onBLEConnectionStateChange(CALLBACK)}    & \begin{tabular}[c]{@{}l@{}}监听低功耗蓝牙连接状态的改变事件（包括\\ 主动连接或断开连接、设备丢失等）\end{tabular} \\ \hline
+    \textit{uni.getBLEDeviceServices(OBJECT)}            & 获取蓝牙设备所有服务                                                                     \\ \hline
+    \textit{uni.getBLEDeviceCharacteristics(OBJECT)}     & 获取蓝牙设备某个服务中所有特征值                                                               \\ \hline
+    \textit{uni.closeBLEConnection(OBJECT)}              & 断开与低功耗蓝牙设备的连接                                                                  \\ \hline
+    \end{tabular}
+    \caption{表格示例}
+\end{table}
+%=== 参考文献 ===
+\clearpage
+\printbibliography
+\end{document}

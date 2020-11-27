@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     IEEE JOURNAL FORMAT      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[journal]{IEEEtran}
+%=== Graphics ===
+\usepackage[pdftex]{graphicx}
+\graphicspath{{../imgs/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\usepackage{subfigure}
+%=== Math ===
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+%--- Customized Math Operators ===
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+%=== Citation ===
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+%=== Lipsum ===
+\usepackage{lipsum}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       TITTLE & AUTHORS       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bstctlcite{IEEEexample:BSTcontrol} % TODO: Change this if necessary
+    \title{Title}
+    \author{John~Doe,~\IEEEmembership{Student~Member,~IEEE}}
+\markboth{IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. XX, MM DD, YYYY}{Title}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           ABSTRACT           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+    \lipsum[1]
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           KEYWORDS           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{IEEEkeywords}
+    KEYWORD1, KEYWORD2, KEYWORD3
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             BODY             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\IEEEPARstart{X}{asjl} \lipsum \cite{einstein}
+
+\section{System Model}
+\lipsum
+
+\section{Simulation}
+\lipsum
+
+\section{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         REFERENCES           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,ref}
+\end{document}
